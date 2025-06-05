@@ -6,12 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esinti Ajans - İşletmenizi Kelebek Etkisiyle Büyütür</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes glow-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0px #2DCA72;
+            }
+
+            50% {
+                box-shadow: 0 0 15px #2DCA72;
+            }
+        }
+
+        .glow-pulse {
+            animation: glow-pulse 1.5s ease-in-out infinite;
+        }
+    </style>
 </head>
 
 <body class="bg-[#0D0D0D]">
 
-    <nav class="mx-2 lg:mx-10 my-5 flex items-center justify-between">
+    <nav class="mx-4 lg:mx-10 my-5 flex items-center justify-between">
         <img class="w-[150px] md:w-[250px]" src="src/Logo-Picsart-AiImageEnhancer.png" alt="">
+        <img class="md:hidden" id="menuBtn" src="src/menu.svg" alt="">
+        <div id="mobileMenu"
+            class="fixed top-0 left-0 w-full h-full bg-[#0D0D0D] z-50 translate-y-[-100%] transition-transform duration-600 ease-in-out">
+            <div class="flex justify-end p-4">
+                <button id="closeMenu" class="text-white text-5xl p-2">&times;</button>
+            </div>
+            <ul class="flex text-white flex-col items-center gap-8 mt-10 text-2xl">
+                <li><a href="#hakkimizda" class="hover:text-[#2DCA72]">Hakkımızda</a></li>
+                <li><a href="#hizmetler" class="hover:text-[#2DCA72]">Hizmetler</a></li>
+                <li><a href="#blog" class="hover:text-[#2DCA72]">Blog</a></li>
+                <li><a href="#iletisim" class="hover:text-[#2DCA72]">İletişim</a></li>
+            </ul>
+        </div>
         <ul class="hidden md:flex text-xl text-[#C9C9C9] items-center gap-10">
             <a href="#" class="relative inline-block group">
                 <span class="relative z-10 ">Hakkımızda</span>
@@ -34,7 +64,11 @@
                     class="absolute left-0 bottom-[-3px] w-full h-0.5 bg-[#2DCA72] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </a>
         </ul>
-        <button class="bg-[#2DCA72] p-3 text-[#0D0D0D] font-semibold rounded-full">İletişime Geçin</button>
+        <button class="bg-[#2DCA72] hidden md:block p-3 text-[#0D0D0D] font-semibold rounded-full glow-pulse">
+            İletişime Geçin
+        </button>
+
+
     </nav>
 
     <main class="mt-11">
@@ -43,7 +77,10 @@
                 <h1 class="text-5xl md:text-8xl font-bold text-white">Yeni Nesil Yaratıcı Dijital Ajans</h1>
                 <p class="text-xl text-[#C9C9C9]">Bir Kelebeğin Kanadından çıkan rüzgar esintisi gibi işletmenizi alıp
                     kelebek etkisiyle uçuruyoruz.</p>
-                <button class="bg-[#2DCA72] p-3 text-[#0D0D0D] font-semibold rounded-full">İletişime Geçin</button>
+                <button class="bg-[#2DCA72] p-3 text-[#0D0D0D] font-semibold mb-6 rounded-full glow-pulse">
+                    İletişime Geçin
+                </button>
+
             </div>
             <img class="w-[350px] xl:w-[600px]" src="src/main1.png" alt="">
         </div>
@@ -189,16 +226,16 @@
     </main>
 
     <footer class="bg-[#0D0D0D] mt-32 mb-20 flex flex-col items-center text-white gap-12 mx-10">
-        <h1 class="text-5xl"><span class="text-[#2DCA72]">Esinti Ajans</span> Geleceğin Dijital Market</h1>
+        <h1 class="text-5xl"><span class="text-[#2DCA72]">Esinti Ajans</span> Geleceğin Dijital Marketi</h1>
         <p class="text-xl max-w-sm text-center break-words">
-            wccwacwacwacwcwad cawcwacwacwa
+            Hemen Bize Ulaşın Ve Ücretsiz Analiz Fırsatını Kaçırmayın!
         </p>
 
         <div class="flex md:flex-row flex-col gap-10 items-center">
             <button class="bg-[#2DCA72] p-3 text-[#0D0D0D] font-semibold rounded-full">Whatsapp</button>
             veya
             <a href="tel:05519283598">
-                <div class="flex gap-3">
+                <div class="flex p-3 bg-blue-600 rounded-full gap-3">
 
                     <img src="src/telefon.png" alt="">
                     0551 928 3598
@@ -207,6 +244,23 @@
             </a>
         </div>
     </footer>
+
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const closeMenu = document.getElementById("closeMenu");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-y-[-100%]");
+            mobileMenu.classList.add("translate-y-0");
+        });
+
+        closeMenu.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-y-0");
+            mobileMenu.classList.add("translate-y-[-100%]");
+        });
+    </script>
 </body>
 
 </html>
