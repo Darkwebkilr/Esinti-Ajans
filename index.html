@@ -118,17 +118,36 @@
         </a>
         <img class="md:hidden" id="menuBtn" src="src/menu.svg" alt="">
         <div id="mobileMenu"
-            class="fixed top-0 left-0 w-full h-full bg-[#0D0D0D] z-50 translate-y-[-100%] transition-transform duration-600 ease-in-out">
-            <div class="flex justify-end p-4">
-                <button id="closeMenu" class="text-white text-5xl p-2">&times;</button>
+            class="fixed top-0 left-0 w-full h-full z-50 translate-y-[-100%] transition-transform duration-700 ease-in-out overflow-hidden">
+
+            <!-- Video Arkaplan -->
+            <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <source src="src/mixkit-group-of-co-workers-huddled-around-a-desk-46610-hd-ready.mp4" type="video/mp4">
+                Tarayıcınız video etiketini desteklemiyor.
+            </video>
+
+            <!-- Siyah Yarı Saydam Katman -->
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
+
+            <!-- Menü İçeriği -->
+            <div class="relative z-20 flex flex-col h-full">
+                <div class="flex justify-end p-4">
+                    <button id="closeMenu" class="text-white text-5xl p-2">&times;</button>
+                </div>
+
+                <!-- Menü Linkleri Ortalanmış -->
+                <div class="flex flex-1 items-center justify-center">
+                    <ul class="flex flex-col items-center gap-8 text-white text-2xl">
+                        <li><a href="#hakkimizda" class="hover:text-[#2DCA72]">Hakkımızda</a></li>
+                        <li><a href="#hizmetler" class="hover:text-[#2DCA72]">Hizmetler</a></li>
+                        <li><a href="#blog" class="hover:text-[#2DCA72]">Blog</a></li>
+                        <li><a href="#iletisim" class="hover:text-[#2DCA72]">İletişim</a></li>
+                    </ul>
+                </div>
             </div>
-            <ul class="flex text-white flex-col items-center gap-8 mt-10 text-2xl">
-                <li><a href="#hakkimizda" class="hover:text-[#2DCA72]">Hakkımızda</a></li>
-                <li><a href="#hizmetler" class="hover:text-[#2DCA72]">Hizmetler</a></li>
-                <li><a href="#blog" class="hover:text-[#2DCA72]">Blog</a></li>
-                <li><a href="#iletisim" class="hover:text-[#2DCA72]">İletişim</a></li>
-            </ul>
         </div>
+
+
         <ul class="hidden md:flex text-xl text-[#C9C9C9] items-center gap-10">
             <a href="#" class="relative inline-block group">
                 <span class="relative z-10 ">Hakkımızda</span>
