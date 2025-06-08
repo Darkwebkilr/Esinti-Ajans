@@ -6,7 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esinti Ajans - İşletmenizi Kelebek Etkisiyle Büyütür</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
     <style>
+        .baslik {
+            font-family: "Playfair Display", serif;
+
+        }
+
+        .parag {
+            font-family: "Merriweather", serif;
+            letter-spacing: 0.05em;
+        }
+
         @keyframes glow-pulse {
 
             0%,
@@ -68,15 +83,15 @@
     </style>
 </head>
 
-<body class="bg-[#0D0D0D] mb-20">
+<body class="bg-[#0D0D0D] mb-20 ">
 
     <div id="popup"
         class="fixed inset-0 z-50 hidden items-center justify-center backdrop-blur-sm bg-black/40 opacity-0 transition-opacity duration-500">
         <div id="popupContent"
-            class="opacity-0  scale-75 transition-all duration-500 ease-out transform bg-[#272727] rounded-3xl shadow-2xl max-w-lg w-full flex flex-col items-center">
-            <img src="src/insta.jpg" alt="Tanıtım" class=" mx-auto rounded-xl max-w-xs md:max-w-md mb-4 p-3" />
+            class="opacity-0  scale-75 transition-all duration-500 ease-out transform bg-[#272727] rounded-3xl shadow-2xl max-w-80 sm:max-w-lg w-full flex flex-col items-center">
+            <img src="src/insta.jpg" alt="Tanıtım" class=" mx-auto rounded-xl w-auto max-w-xs md:max-w-md mb-4 p-3" />
             <div class="bg-[#b0b0b0] flex flex-col items-center rounded-2xl p-5">
-                <p class="text-red-500 text-5xl font-extrabold mb-3 tracking-wide drop-shadow">Özel Teklif!</p>
+                <p class="text-red-500 text-5xl font-extrabold mb-3 tracking-wide drop-shadow baslik">Özel Teklif!</p>
                 <p class="text-center text-lg text-gray-700">Merhaba! <strong>Esinti Ajans</strong> olarak size özel bir
                     teklif hazırladık! <br />
                     Eğer <span class="font-semibold text-black">hemen şimdi</span> bize ulaşırsanız, ücretsiz <u>marka
@@ -146,8 +161,9 @@
     <main class="mt-11">
         <div class="flex lg:flex-row flex-col mx-10 lg:mx-28  items-center justify-between">
             <div class="flex flex-col justify-center items-center gap-10 max-w-[600px]">
-                <h1 class="text-5xl md:text-8xl font-bold text-white">Yeni Nesil Yaratıcı Dijital Ajans</h1>
-                <p class="text-xl text-[#C9C9C9]">Bir Kelebeğin Kanadından çıkan rüzgar esintisi gibi işletmenizi alıp
+                <h1 class="text-5xl md:text-8xl font-bold text-white baslik">Yeni Nesil Yaratıcı Dijital Ajans</h1>
+                <p class="text-xl text-[#C9C9C9] parag ">Bir Kelebeğin Kanadından çıkan rüzgar esintisi gibi işletmenizi
+                    alıp
                     kelebek etkisiyle uçuruyoruz.</p>
                 <button class="bg-[#2DCA72] md:hidden p-3 text-[#0D0D0D] font-semibold mb-6 rounded-full glow-pulse">
                     Teklif Al
@@ -185,7 +201,7 @@
                     <div class="bg-[#131313] flex flex-col items-center gap-5 p-5 rounded-xl">
                         <img src="src/card1.png" alt="">
                         <h1 class="text-3xl">Seo Optimizasyonu</h1>
-                        <p class="text-[#d6d6d6]">Ekibimiz sizin için en uygun adwordsleri AI yardımı ile bulup reklam
+                        <p class="text-[#d6d6d6] ">Ekibimiz sizin için en uygun adwordsleri AI yardımı ile bulup reklam
                             stratejinizi oluşturuyor</p>
                     </div>
                 </div>
@@ -397,32 +413,33 @@
         window.addEventListener('DOMContentLoaded', () => {
             const popup = document.getElementById('popup');
             const popupContent = document.getElementById('popupContent');
-            const hasSeenPopup = sessionStorage.getItem('popupShown');
+            const hasSeenPopup = localStorage.getItem('popupShown'); // localStorage kullanıldı
 
-            setTimeout(() => {
-                // 1. İlk adım: görünür yap ama animasyon sınıflarını koru
-                popup.classList.remove('hidden');
-                popup.classList.add('flex');
-                popup.classList.add('opacity-0'); // Başlangıç hali
-                popupContent.classList.add('opacity-0', 'scale-75');
+            if (!hasSeenPopup) { // Artık localStorage kontrolü yapılıyor
+                setTimeout(() => {
+                    // 1. Başlangıç hali
+                    popup.classList.remove('hidden');
+                    popup.classList.add('flex');
+                    popup.classList.add('opacity-0');
+                    popupContent.classList.add('opacity-0', 'scale-75');
 
-                document.body.classList.add('overflow-hidden');
+                    document.body.classList.add('overflow-hidden');
 
-                // 2. Tarayıcının DOM'u işlemesini bekle, sonra sınıfları değiştir
-                requestAnimationFrame(() => {
-                    // Yumuşak geçiş için bir tick daha bekle
-                    setTimeout(() => {
-                        popup.classList.remove('opacity-0');
-                        popup.classList.add('opacity-100');
+                    // 2. DOM işlemesi sonrası animasyon başlat
+                    requestAnimationFrame(() => {
+                        setTimeout(() => {
+                            popup.classList.remove('opacity-0');
+                            popup.classList.add('opacity-100');
 
-                        popupContent.classList.remove('opacity-0', 'scale-75');
-                        popupContent.classList.add('opacity-100', 'scale-100');
-                    }, 10);
-                });
-            }, 10000);
+                            popupContent.classList.remove('opacity-0', 'scale-75');
+                            popupContent.classList.add('opacity-100', 'scale-100');
+                        }, 10);
+                    });
+                }, 10000); // 10 saniye sonra göster
+            }
 
             document.getElementById('closeBtn').addEventListener('click', () => {
-                // animasyonu geri sar
+                // Animasyonu geri sar
                 popup.classList.remove('opacity-100');
                 popup.classList.add('opacity-0');
 
@@ -433,11 +450,12 @@
                     popup.classList.add('hidden');
                     popup.classList.remove('flex');
                     document.body.classList.remove('overflow-hidden');
-                    sessionStorage.setItem('popupShown', 'true');
-                }, 500); // animasyon süresi
+                    localStorage.setItem('popupShown', 'true'); // Artık localStorage’a yazılıyor
+                }, 500);
             });
         });
     </script>
+
     <script>
         const offerBtn = document.getElementById('teklif');
         const popup = document.getElementById('popup');
