@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esinti Ajans - İşletmenizi Kelebek Etkisiyle Büyütür</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .baslik {
+            font-family: "Playfair Display", serif;
+
+        }
+
+        .parag {
+            font-family: "Merriweather", serif;
+            letter-spacing: 0.05em;
+        }
+
+        @keyframes glow-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0px #2DCA72;
+            }
+
+            50% {
+                box-shadow: 0 0 20px 8px #2DCA72;
+                /* geniş ve güçlü glow */
+            }
+        }
+
+        .glow-pulse {
+            animation: glow-pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes borderGlow {
+            0% {
+                border-color: transparent;
+                box-shadow: 0 0 0px rgba(0, 191, 255, 0.2);
+            }
+
+            50% {
+                border-color: rgba(0, 191, 255, 0.9);
+                box-shadow: 0 0 30px 10px rgba(0, 191, 255, 0.8);
+                /* daha yayvan ve parlak */
+            }
+
+            100% {
+                border-color: transparent;
+                box-shadow: 0 0 0px rgba(0, 191, 255, 0.2);
+            }
+        }
+
+        .animate-borderGlow {
+            animation: borderGlow 2s infinite ease-in-out;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #111;
+            position: relative;
+            z-index: 1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0D0D0D] mb-20 ">
+
+    <div id="popup"
+        class="fixed inset-0 z-50 hidden items-center justify-center backdrop-blur-sm bg-black/40 opacity-0 transition-opacity duration-500">
+        <div id="popupContent"
+            class="opacity-0  scale-75 transition-all duration-500 ease-out transform bg-[#272727] rounded-3xl shadow-2xl max-w-80 sm:max-w-lg w-full flex flex-col items-center">
+            <img src="src/insta.jpg" alt="Tanıtım" class=" mx-auto rounded-xl w-auto max-w-xs md:max-w-md mb-4 p-3" />
+            <div class="bg-[#b0b0b0] flex flex-col items-center rounded-2xl p-5">
+                <p class="text-red-500 text-5xl font-extrabold mb-3 tracking-wide drop-shadow baslik">Özel Teklif!</p>
+                <p class="text-center text-lg text-gray-700">Merhaba! <strong>Esinti Ajans</strong> olarak size özel bir
+                    teklif hazırladık! <br />
+                    Eğer <span class="font-semibold text-black">hemen şimdi</span> bize ulaşırsanız, ücretsiz <u>marka
+                        analizi</u> teklifimizden yararlanabilirsiniz.</p>
+
+
+                <button id="teklif"
+                    class="relative z-10 bg-[#47ffaf] mt-5 text-[#0e0e0e] px-6 py-2 rounded-md font-semibold shadow-lg glow-pulse">
+                    Teklife Git →
+                </button>
+
+                <button id="closeBtn" class="absolute right-3 text-white top-0 text-5xl">&times</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <nav class="mx-4 lg:mx-10 my-5 flex items-center justify-between">
+        <a href="index.html">
+            <img class="w-[150px] md:w-[250px]" src="src/Logo-Picsart-AiImageEnhancer.png" alt="">
+        </a>
+        <img class="md:hidden" id="menuBtn" src="src/menu.svg" alt="">
+        <div id="mobileMenu"
+            class="fixed top-0 left-0 w-full h-full z-50 translate-y-[-100%] transition-transform duration-700 ease-in-out overflow-hidden">
+
+            <!-- Video Arkaplan -->
+            <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <source src="src/mixkit-group-of-co-workers-huddled-around-a-desk-46610-hd-ready.mp4" type="video/mp4">
+                Tarayıcınız video etiketini desteklemiyor.
+            </video>
+
+            <!-- Siyah Yarı Saydam Katman -->
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
+
+            <!-- Menü İçeriği -->
+            <div class="relative z-20 flex flex-col h-full">
+                <div class="flex justify-end p-4">
+                    <button id="closeMenu" class="text-white text-5xl p-2">&times;</button>
+                </div>
+
+                <!-- Menü Linkleri Ortalanmış -->
+                <div class="flex flex-1 items-center justify-center">
+                    <ul class="flex flex-col items-center gap-8 text-white text-2xl">
+                        <li><a href="hakkimizda.html" class="hover:text-[#2DCA72]">Hakkımızda</a></li>
+                        <li><a href="hizmetlerimiz.html" class="hover:text-[#2DCA72]">Hizmetler</a></li>
+                        <li><a href="blog" class="hover:text-[#2DCA72]">Blog</a></li>
+                        <li><a href="iletisim" class="hover:text-[#2DCA72]">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <ul class="hidden md:flex text-xl text-[#C9C9C9] items-center gap-10">
+            <a href="hakkimizda.html" class="relative inline-block group">
+                <span class="relative z-10 ">Hakkımızda</span>
+                <span
+                    class="absolute left-0 bottom-[-3px] w-full h-0.5 bg-[#2DCA72] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </a>
+            <a href="hizmetlerimiz.html" class="relative inline-block group">
+                <span class="relative z-10 ">Hizmetlerimiz</span>
+                <span
+                    class="absolute left-0 bottom-[-3px] w-full h-0.5 bg-[#2DCA72] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </a>
+            <a href="#" class="relative inline-block group">
+                <span class="relative z-10 ">Blog</span>
+                <span
+                    class="absolute left-0 bottom-[-3px] w-full h-0.5 bg-[#2DCA72] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </a>
+            <a href="#" class="relative inline-block group">
+                <span class="relative z-10 ">İletişim</span>
+                <span
+                    class="absolute left-0 bottom-[-3px] w-full h-0.5 bg-[#2DCA72] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </a>
+        </ul>
+        <button class="bg-[#2DCA72] hidden md:block p-3 text-[#0D0D0D] font-semibold rounded-full glow-pulse">
+            Teklif Al
+        </button>
+
+
+    </nav>
+
+    <section class="text-white px-6 py-20 max-w-6xl mx-auto">
+        <!-- Başlık -->
+        <h1 class="text-5xl font-extrabold text-center text-[#2DCA72] mb-12">Hakkımızda</h1>
+
+        <!-- Giriş Paragrafları -->
+        <div class="text-lg leading-relaxed text-[#e0e0e0] space-y-6">
+            <p>
+                <strong>Esinti Ajans</strong>, markaların dijital dünyada fark yaratmasını sağlayan yaratıcı bir reklam
+                ajansıdır. 2020 yılında İzmir'de kurulduk ve bugüne kadar yüzlerce markanın dijital dönüşüm yolculuğunda
+                yanında olduk.
+            </p>
+            <p>
+                Biz, sadece “tasarım” yapan bir ekip değiliz. Marka kimliğinizi stratejiyle harmanlayan, sonuç odaklı
+                çözümler sunan bir çözüm ortağıyız. Dijital reklamcılığın her alanında uzmanız: sosyal medya yönetimi,
+                web tasarımı, SEO, video prodüksiyon ve daha fazlası.
+            </p>
+            <p>
+                Ajansımızın temelinde, güven, şeffaflık ve sürdürülebilir başarı ilkeleri yatar. Her müşterimize özel
+                bir strateji oluşturur, onların hedef kitlesine özel bir dil geliştiririz. Çünkü her marka benzersizdir.
+            </p>
+        </div>
+
+        <!-- İstatistikler -->
+        <div class="grid sm:grid-cols-3 text-center mt-16 gap-10">
+            <div>
+                <p class="text-5xl font-bold text-[#2DCA72]">+4</p>
+                <p class="text-[#ccc] text-xl mt-2">Yıl Deneyim</p>
+            </div>
+            <div>
+                <p class="text-5xl font-bold text-[#2DCA72]">+150</p>
+                <p class="text-[#ccc] text-xl mt-2">Tamamlanan Proje</p>
+            </div>
+            <div>
+                <p class="text-5xl font-bold text-[#2DCA72]">+15</p>
+                <p class="text-[#ccc] text-xl mt-2">Uzman Ekip Üyesi</p>
+            </div>
+        </div>
+
+        <!-- Vizyon / Misyon -->
+        <div class="mt-20 space-y-12">
+            <div>
+                <h2 class="text-3xl font-semibold text-[#2DCA72] mb-4">Vizyonumuz</h2>
+                <p class="text-[#d1d1d1] text-lg leading-relaxed">
+                    Dijital dünyada markaların sadece görünür değil, unutulmaz olmalarını sağlamak. Türkiye'de ve
+                    globalde en çok güvenilen yaratıcı ajanslardan biri olmak.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-semibold text-[#2DCA72] mb-4">Misyonumuz</h2>
+                <p class="text-[#d1d1d1] text-lg leading-relaxed">
+                    Müşterilerimizin iş hedeflerini anlayarak, dijital pazarlamanın tüm gücünü onlara sunmak. Yaratıcı
+                    çözümlerle, veriye dayalı stratejilerle ve sürdürülebilir başarılarla fark yaratmak.
+                </p>
+            </div>
+        </div>
+
+        <!-- Kurucudan Mesaj -->
+        <div class="mt-20 flex flex-col md:flex-row items-center gap-10">
+            <img src="src/founder.jpg" alt="Kurucu"
+                class="w-40 h-40 object-cover rounded-full border-4 border-[#2DCA72] shadow-lg">
+            <div class="text-[#eaeaea] max-w-xl text-lg">
+                <p class="italic">“Bir kelebeğin kanat çırpışıyla başlar her şey... Biz, o ilk esintiyi yaratıyoruz.”
+                </p>
+                <p class="mt-4 font-semibold">— Ali Yılmaz, Kurucu & Kreatif Direktör</p>
+            </div>
+        </div>
+
+        <!-- Markalar / Güven Bölümü -->
+        <div class="mt-24">
+            <h2 class="text-3xl font-semibold text-[#2DCA72] text-center mb-10">Bize Güvenen Markalar</h2>
+            <div class="flex flex-wrap justify-center items-center gap-8 grayscale hover:grayscale-0 transition">
+                <img src="src/logo1.png" class="h-12" alt="Marka 1">
+                <img src="src/logo2.png" class="h-12" alt="Marka 2">
+                <img src="src/logo3.png" class="h-12" alt="Marka 3">
+                <img src="src/logo4.png" class="h-12" alt="Marka 4">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <footer id="footer" class="my-40 flex flex-col items-center text-white gap-12 mx-10 ">
+        <h1 class="text-5xl"><span class="text-[#2DCA72]">Esinti Ajans</span> Geleceğin Dijital Marketi</h1>
+        <p class="text-xl max-w-sm text-center break-words">
+            Hemen Bize Ulaşın Ve Ücretsiz Analiz Fırsatını Kaçırmayın!
+        </p>
+
+        <div class="flex md:flex-row flex-col gap-4 mb-24 md:gap-10 items-center ">
+            <button class="bg-[#2DCA72] p-3 text-[#e2e2e2] font-semibold rounded-full">Whatsapp</button>
+            veya
+            <a href="tel:05519283598">
+                <div class="flex p-3 bg-blue-600 rounded-full gap-3 ">
+
+                    <img src="src/telefon.png" alt="">
+                    0551 928 3598
+
+                </div>
+            </a>
+        </div>
+        <p class="items-end mb-3">Copyright © Esinti Ajans 2025 Tüm hakları saklıdır.</p>
+    </footer>
+
+
+
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const closeMenu = document.getElementById("closeMenu");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-y-[-100%]");
+            mobileMenu.classList.add("translate-y-0");
+        });
+
+        closeMenu.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-y-0");
+            mobileMenu.classList.add("translate-y-[-100%]");
+        });
+    </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const popup = document.getElementById('popup');
+            const popupContent = document.getElementById('popupContent');
+            const hasSeenPopup = localStorage.getItem('popupShown'); // localStorage kullanıldı
+
+            if (!hasSeenPopup) { // Artık localStorage kontrolü yapılıyor
+                setTimeout(() => {
+                    // 1. Başlangıç hali
+                    popup.classList.remove('hidden');
+                    popup.classList.add('flex');
+                    popup.classList.add('opacity-0');
+                    popupContent.classList.add('opacity-0', 'scale-75');
+
+                    document.body.classList.add('overflow-hidden');
+
+                    // 2. DOM işlemesi sonrası animasyon başlat
+                    requestAnimationFrame(() => {
+                        setTimeout(() => {
+                            popup.classList.remove('opacity-0');
+                            popup.classList.add('opacity-100');
+
+                            popupContent.classList.remove('opacity-0', 'scale-75');
+                            popupContent.classList.add('opacity-100', 'scale-100');
+                        }, 10);
+                    });
+                }, 10000); // 10 saniye sonra göster
+            }
+
+            document.getElementById('closeBtn').addEventListener('click', () => {
+                // Animasyonu geri sar
+                popup.classList.remove('opacity-100');
+                popup.classList.add('opacity-0');
+
+                popupContent.classList.remove('opacity-100', 'scale-100');
+                popupContent.classList.add('opacity-0', 'scale-75');
+
+                setTimeout(() => {
+                    popup.classList.add('hidden');
+                    popup.classList.remove('flex');
+                    document.body.classList.remove('overflow-hidden');
+                    localStorage.setItem('popupShown', 'true'); // Artık localStorage’a yazılıyor
+                }, 500);
+            });
+        });
+    </script>
+
+    <script>
+        const offerBtn = document.getElementById('teklif');
+        const popup = document.getElementById('popup');
+        const popupContent = document.getElementById('popupContent');
+        const closeBtn = document.getElementById('closeBtn');
+        const footer = document.getElementById('footer');
+
+        offerBtn.addEventListener('click', () => {
+            // Footer'a yumuşak geçiş yap
+            footer.scrollIntoView({ behavior: 'smooth' });
+
+            // Pop-up'ı kapat
+            popup.classList.remove('opacity-100');
+            popup.classList.add('opacity-0');
+
+            popupContent.classList.remove('opacity-100', 'scale-100');
+            popupContent.classList.add('opacity-0', 'scale-75');
+
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+                sessionStorage.setItem('popupShown', 'true');
+            }, 500); // animasyon süresi
+        });
+
+        // Kapama butonunu ayrı dinle
+        closeBtn.addEventListener('click', () => {
+            popup.classList.remove('opacity-100');
+            popup.classList.add('opacity-0');
+
+            popupContent.classList.remove('opacity-100', 'scale-100');
+            popupContent.classList.add('opacity-0', 'scale-75');
+
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+                sessionStorage.setItem('popupShown', 'true');
+            }, 500);
+        });
+    </script>
+
+</body>
+
+</html>
