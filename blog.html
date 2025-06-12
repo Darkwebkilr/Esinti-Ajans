@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esinti Ajans - İşletmenizi Kelebek Etkisiyle Büyütür</title>
+    <title>Esinti Ajans - Blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
@@ -88,54 +88,41 @@
     <div id="popup"
         class="fixed inset-0 z-50 hidden items-center justify-center backdrop-blur-sm bg-black/40 opacity-0 transition-opacity duration-500">
         <div id="popupContent"
-            class="opacity-0  scale-75 transition-all duration-500 ease-out transform bg-[#272727] rounded-3xl shadow-2xl max-w-80 sm:max-w-lg w-full flex flex-col items-center">
+            class="opacity-0 scale-75 transition-all duration-500 ease-out transform bg-[#272727] rounded-3xl shadow-2xl max-w-80 sm:max-w-lg w-full flex flex-col items-center">
             <img src="src/insta.jpg" alt="Tanıtım" class=" mx-auto rounded-xl w-auto max-w-xs md:max-w-md mb-4 p-3" />
             <div class="bg-[#b0b0b0] flex flex-col items-center rounded-2xl p-5">
-                <p class="text-red-500 text-5xl font-extrabold mb-3 tracking-wide drop-shadow baslik">Özel Teklif!</p>
-                <p class="text-center text-lg text-gray-700">Merhaba! <strong>Esinti Ajans</strong> olarak size özel bir
-                    teklif hazırladık! <br />
+                <p class="text-red-500 text-5xl font-extrabold mb-3 tracking-wide drop-shadow baslik">Özel Teklif!
+                </p>
+                <p class="text-center text-lg text-gray-700">Merhaba! <strong>Esinti Ajans</strong> olarak size özel
+                    bir teklif hazırladık! <br />
                     Eğer <span class="font-semibold text-black">hemen şimdi</span> bize ulaşırsanız, ücretsiz <u>marka
                         analizi</u> teklifimizden yararlanabilirsiniz.</p>
-
-
                 <button id="teklif"
                     class="relative z-10 bg-[#47ffaf] mt-5 text-[#0e0e0e] px-6 py-2 rounded-md font-semibold shadow-lg glow-pulse">
                     Teklife Git →
                 </button>
-
                 <button id="closeBtn" class="absolute right-3 text-white top-0 text-5xl">&times</button>
             </div>
         </div>
     </div>
 
-
-
-
-
     <nav class="mx-4 lg:mx-10 my-5 flex items-center justify-between">
         <a href="index.html">
-            <img class="w-[150px] md:w-[250px]" src="src/Logo-Picsart-AiImageEnhancer.png" alt="">
+            <img class="w-[150px] md:w-[250px]" src="src/Logo-Picsart-AiImageEnhancer.png" alt="Esinti Ajans Logo">
         </a>
-        <img class="md:hidden" id="menuBtn" src="src/menu.svg" alt="">
+        <img class="md:hidden" id="menuBtn" src="src/menu.svg" alt="Menu">
         <div id="mobileMenu"
             class="fixed top-0 left-0 w-full h-full z-50 translate-y-[-100%] transition-transform duration-700 ease-in-out overflow-hidden">
-
-            <!-- Video Arkaplan -->
             <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
-                <source src="src/mixkit-group-of-co-workers-huddled-around-a-desk-46610-hd-ready.mp4" type="video/mp4">
+                <source src="src/mixkit-group-of-co-workers-huddled-around-a-desk-46610-hd-ready.mp4"
+                    type="video/mp4">
                 Tarayıcınız video etiketini desteklemiyor.
             </video>
-
-            <!-- Siyah Yarı Saydam Katman -->
             <div class="absolute inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
-
-            <!-- Menü İçeriği -->
             <div class="relative z-20 flex flex-col h-full">
                 <div class="flex justify-end p-4">
                     <button id="closeMenu" class="text-white text-5xl p-2">&times;</button>
                 </div>
-
-                <!-- Menü Linkleri Ortalanmış -->
                 <div class="flex flex-1 items-center justify-center">
                     <ul class="flex flex-col items-center gap-8 text-white text-2xl">
                         <li><a href="hakkimizda.html" class="hover:text-[#2DCA72]">Hakkımızda</a></li>
@@ -146,7 +133,6 @@
                 </div>
             </div>
         </div>
-
 
         <ul class="hidden md:flex text-xl text-[#C9C9C9] items-center gap-10">
             <a href="hakkimizda.html" class="relative inline-block group">
@@ -173,128 +159,32 @@
         <button class="bg-[#2DCA72] hidden md:block p-3 text-[#0D0D0D] font-semibold rounded-full glow-pulse">
             Teklif Al
         </button>
-
-
     </nav>
 
     <main class="mt-11">
-        <div class="flex lg:flex-row flex-col mx-10 lg:mx-28  items-center justify-between">
-            <div class="flex flex-col justify-center items-center gap-10 max-w-[600px]">
-                <h1 class="text-5xl md:text-8xl font-bold text-white baslik">Yeni Nesil Yaratıcı Dijital Ajans</h1>
-                <p class="text-xl text-[#C9C9C9] parag ">Bir Kelebeğin Kanadından çıkan rüzgar esintisi gibi işletmenizi
-                    alıp
-                    kelebek etkisiyle uçuruyoruz.</p>
-                <button class="bg-[#2DCA72] md:hidden p-3 text-[#0D0D0D] font-semibold mb-6 rounded-full glow-pulse">
-                    Teklif Al
-                </button>
+        <div class="flex flex-col items-center justify-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-bold text-center baslik mb-16">Blog Yazılarımız</h1>
 
-            </div>
-            <img class="w-[350px] xl:w-[600px]" src="src/main1.png" alt="">
-        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
 
-        <div class="w-full h-auto bg-[#868686] flex items-center justify-center bg-opacity-50 mt-28">
-            <div class="grid sm:grid-cols-3 w-full my-10 gap-10 mx-10">
-                <div class="text-center gap-4">
-                    <p id="counter1" data-target="4" class="text-6xl text-white font-bold">0</p>
-                    <p class="text-white text-xl">Yıl Deneyim</p>
-                </div>
-                <div class="text-center gap-4">
-                    <p id="counter2" data-target="150" class="text-6xl text-white font-bold">0</p>
-                    <p class="text-white text-xl">Tamamlanan İş</p>
-                </div>
-                <div class="text-center gap-4">
-                    <p id="counter3" data-target="15" class="text-6xl text-white font-bold">0</p>
-                    <p class="text-white text-xl">Ekip Üyesi</p>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div id="Hizmetlerimiz" class="text-white flex flex-col items-center justify-center mt-11 px-4">
-            <img class="w-[600px] absolute -z-10 right-0" src="src/bg1.png" alt="">
-            <h1 class="text-5xl text-center mb-20">Hizmetlerimiz</h1>
-
-            <div class="grid grid-cols-1 mx-10 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-                <div class="flex justify-center items-center ">
-                    <div class="bg-[#131313] flex flex-col items-center gap-5 p-5 rounded-xl">
-                        <img src="src/card1.png" alt="">
-                        <h1 class="text-3xl">Seo Optimizasyonu</h1>
-                        <p class="text-[#d6d6d6] ">Ekibimiz sizin için en uygun adwordsleri AI yardımı ile bulup reklam
-                            stratejinizi oluşturuyor</p>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center ">
-                    <div class="bg-[#131313] flex flex-col items-center gap-5 p-5 rounded-xl">
-                        <img src="src/card2.png" alt="">
-                        <h1 class="text-3xl">Web Sitesi Tasarımı</h1>
-                        <p class="text-[#d6d6d6]">Her bütçe ve fikre uygun websiteleri tasarımı ve yayınlanması </p>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center ">
-                    <div class="bg-[#131313] flex flex-col items-center gap-5 p-5 rounded-xl">
-                        <img src="src/card3.png" alt="">
-                        <h1 class="text-3xl">Profesyonel Video Çekimi</h1>
-                        <p class="text-[#d6d6d6]">Ürün ve Reklam için video ve fotoğraf çekimleri</p>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center ">
-                    <div class="bg-[#131313] flex flex-col items-center gap-5 p-5 rounded-xl">
-                        <img src="src/card4.png" alt="">
-                        <h1 class="text-3xl">Sosyal Medya Yönetimi</h1>
-                        <p class="text-[#d6d6d6]">Her türlü sosyal medya hesabınızı inceleyip büyütmek</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="Neden Biz" class="flex lg:flex-row flex-col mt-36 items-center justify-center  gap-20">
-            <img class="w-[300px] lg:w-[500px]" src="src/Section Image.png" alt="">
-            <div class="flex flex-col text-center justify-center items-center text-white">
-                <h1 class="text-4xl lg:text-6xl ">Neden Biz?</h1>
-
-                <div class="flex items-center mt-10 gap-2">
-                    <img src="src/checklist.png" width="50px" alt="">
-                    <p class="text-xl">Esinti Ajans olarak işletmenizi en uygun strateji ile büyütüyoruz. </p>
-                </div>
-                <div class="flex items-center mt-10 gap-2">
-                    <img src="src/checklist.png" width="50px" alt="">
-                    <p class="text-xl">Her bütçeye uygun fiyat politikasına sahibiz. </p>
-                </div>
-                <div class="flex items-center mt-10 gap-2">
-                    <img src="src/checklist.png" width="50px" alt="">
-                    <p class="text-xl">100% büyüme garantisi. </p>
-                </div>
-            </div>
-        </div>
-
-
-        <div id="Blog" class="text-white flex justify-center lg:mx-44 flex-col mt-36 gap-20 px-4">
-            <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
-                <h1 class="text-4xl sm:text-6xl font-bold">Blog</h1>
-                <a href="#"
-                    class="text-xl cursor-pointer sm:text-2xl underline underline-offset-4 hover:text-[#2DCA72] transition">daha
-                    fazlası >></a>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                 <div
-                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="rounded-t-lg p-3" src="src/dj1.png" alt="" />
+                    class="bg-[#131313] border border-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <a href="blog-post-1.html">
+                        <img class="rounded-t-xl p-4 w-full h-auto object-cover" src="src/dj1.png"
+                            alt="Blog Post Image 1" />
                     </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Esinti
-                                Ajans 2025 ilk çeyrek eylem planı</h5>
+                    <div class="p-6 flex flex-col justify-between h-auto">
+                        <a href="blog-post-1.html">
+                            <h2 class="mb-3 text-3xl font-bold tracking-tight text-white baslik">Esinti Ajans 2025 ilk
+                                çeyrek eylem planı</h2>
                         </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Esinti Ajans olarak 2025 in ilk
-                            çeyreğinde yaptıklarımızı duyurmaktan mutluluk duyuyoruz.
-                        </p>
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <p class="mb-4 font-normal text-gray-400 parag">Esinti Ajans olarak 2025'in ilk çeyreğinde
+                            yaptıklarımızı duyurmaktan mutluluk duyuyoruz. Bu yazımızda, hedeflerimizi ve başarılarımızı
+                            detaylandırıyoruz.</p>
+                        <a href="blog-post-1.html"
+                            class="inline-flex items-center px-4 py-2 text-md font-medium text-center text-white bg-[#2DCA72] rounded-lg hover:bg-[#209c53] focus:ring-4 focus:outline-none focus:ring-[#2DCA72]/50 transition duration-300">
                             Daha fazlasını oku
-                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -304,21 +194,23 @@
                 </div>
 
                 <div
-                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="rounded-t-lg p-3" src="src/dj2.png" alt="" />
+                    class="bg-[#131313] border border-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <a href="blog-post-2.html">
+                        <img class="rounded-t-xl p-4 w-full h-auto object-cover" src="src/dj2.png"
+                            alt="Blog Post Image 2" />
                     </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                                technology acquisitions 2021</h5>
+                    <div class="p-6 flex flex-col justify-between h-auto">
+                        <a href="blog-post-2.html">
+                            <h2 class="mb-3 text-3xl font-bold tracking-tight text-white baslik">Dijital Pazarlamanın
+                                Geleceği: Trendler ve İpuçları</h2>
                         </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                            technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                        <p class="mb-4 font-normal text-gray-400 parag">Dijital pazarlama sürekli evriliyor. 2025
+                            yılında öne çıkacak ana trendleri ve işletmenizi nasıl güncel tutabileceğinizi bu yazıda
+                            bulabilirsiniz.</p>
+                        <a href="blog-post-2.html"
+                            class="inline-flex items-center px-4 py-2 text-md font-medium text-center text-white bg-[#2DCA72] rounded-lg hover:bg-[#209c53] focus:ring-4 focus:outline-none focus:ring-[#2DCA72]/50 transition duration-300">
+                            Daha fazlasını oku
+                            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -327,24 +219,99 @@
                     </div>
                 </div>
 
-
+                <div
+                    class="bg-[#131313] border border-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <a href="blog-post-3.html">
+                        <img class="rounded-t-xl p-4 w-full h-auto object-cover" src="src/dj3.png"
+                            alt="Blog Post Image 3" />
+                    </a>
+                    <div class="p-6 flex flex-col justify-between h-auto">
+                        <a href="blog-post-3.html">
+                            <h2 class="mb-3 text-3xl font-bold tracking-tight text-white baslik">Web Sitesi Tasarımında
+                                Yapılan Yaygın Hatalar</h2>
+                        </a>
+                        <p class="mb-4 font-normal text-gray-400 parag">Bir web sitesi tasarlarken sıkça yapılan
+                            hatalardan kaçınmak, başarınız için kritik öneme sahiptir. İşte dikkat etmeniz gerekenler.
+                        </p>
+                        <a href="blog-post-3.html"
+                            class="inline-flex items-center px-4 py-2 text-md font-medium text-center text-white bg-[#2DCA72] rounded-lg hover:bg-[#209c53] focus:ring-4 focus:outline-none focus:ring-[#2DCA72]/50 transition duration-300">
+                            Daha fazlasını oku
+                            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
                 <div
-                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="rounded-t-lg p-3" src="src/dj3.png" alt="" />
+                    class="bg-[#131313] border border-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <a href="blog-post-4.html">
+                        <img class="rounded-t-xl p-4 w-full h-auto object-cover" src="src/card1.png"
+                            alt="Blog Post Image 4" />
                     </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                                technology acquisitions 2021</h5>
+                    <div class="p-6 flex flex-col justify-between h-auto">
+                        <a href="blog-post-4.html">
+                            <h2 class="mb-3 text-3xl font-bold tracking-tight text-white baslik">SEO Optimizasyonu ile
+                                Daha Fazla Müşteri Çekin</h2>
                         </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                            technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                        <p class="mb-4 font-normal text-gray-400 parag">Arama motoru optimizasyonu (SEO) ile web
+                            sitenizin görünürlüğünü artırarak daha fazla potansiyel müşteriye ulaşın.</p>
+                        <a href="blog-post-4.html"
+                            class="inline-flex items-center px-4 py-2 text-md font-medium text-center text-white bg-[#2DCA72] rounded-lg hover:bg-[#209c53] focus:ring-4 focus:outline-none focus:ring-[#2DCA72]/50 transition duration-300">
+                            Daha fazlasını oku
+                            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-[#131313] border border-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <a href="blog-post-5.html">
+                        <img class="rounded-t-xl p-4 w-full h-auto object-cover" src="src/card2.png"
+                            alt="Blog Post Image 5" />
+                    </a>
+                    <div class="p-6 flex flex-col justify-between h-auto">
+                        <a href="blog-post-5.html">
+                            <h2 class="mb-3 text-3xl font-bold tracking-tight text-white baslik">Etkili Sosyal Medya
+                                Yönetimi Stratejileri</h2>
+                        </a>
+                        <p class="mb-4 font-normal text-gray-400 parag">Sosyal medya platformlarında doğru stratejilerle
+                            marka bilinirliğinizi artırın ve hedef kitlenizle etkileşimi güçlendirin.</p>
+                        <a href="blog-post-5.html"
+                            class="inline-flex items-center px-4 py-2 text-md font-medium text-center text-white bg-[#2DCA72] rounded-lg hover:bg-[#209c53] focus:ring-4 focus:outline-none focus:ring-[#2DCA72]/50 transition duration-300">
+                            Daha fazlasını oku
+                            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-[#131313] border border-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <a href="blog-post-6.html">
+                        <img class="rounded-t-xl p-4 w-full h-auto object-cover" src="src/card3.png"
+                            alt="Blog Post Image 6" />
+                    </a>
+                    <div class="p-6 flex flex-col justify-between h-auto">
+                        <a href="blog-post-6.html">
+                            <h2 class="mb-3 text-3xl font-bold tracking-tight text-white baslik">Video Prodüksiyonun
+                                Markanıza Katkıları</h2>
+                        </a>
+                        <p class="mb-4 font-normal text-gray-400 parag">Profesyonel video içerikleriyle markanızın
+                            hikayesini anlatın, ürünlerinizi tanıtın ve hedef kitlenizle derin bir bağ kurun.</p>
+                        <a href="blog-post-6.html"
+                            class="inline-flex items-center px-4 py-2 text-md font-medium text-center text-white bg-[#2DCA72] rounded-lg hover:bg-[#209c53] focus:ring-4 focus:outline-none focus:ring-[#2DCA72]/50 transition duration-300">
+                            Daha fazlasını oku
+                            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -357,7 +324,7 @@
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-white py-12 mt-20">
+    <footer id="footer" class="bg-gray-900 text-white py-12 mt-20">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
                 <h3 class="text-2xl font-bold mb-4 text-gradient-custom">Esinti Ajans</h3>
@@ -375,14 +342,15 @@
                             class="text-gray-400 hover:text-blue-400 transition duration-300">Hakkımızda</a></li>
                     <li><a href="blog.html" class="text-gray-400 hover:text-blue-400 transition duration-300">Blog</a>
                     </li>
-                    <li><a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">İletişim</a></li>
+                    <li><a href="iletisim.html" class="text-gray-400 hover:text-blue-400 transition duration-300">İletişim</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-xl font-semibold mb-4">Hizmetlerimiz</h4>
                 <ul class="space-y-2">
                     <li><a href="hizmetlerimiz.html#seo"
-                            class="text-gray-400 hover:text-blue-400 transition duration-300">SEO Optimizasyonu</a></li>
+                            class="text-gray-400 hover:text-blue-400 transition duration-300">SEO Optimizasyonu</a>
+                    </li>
                     <li><a href="hizmetlerimiz.html#web-tasarim"
                             class="text-gray-400 hover:text-blue-400 transition duration-300">Web Sitesi Tasarımı</a>
                     </li>
@@ -418,42 +386,6 @@
         </div>
     </footer>
 
-
-    <script>
-        function animateCounter(el, target, duration) {
-            let start = 0;
-            const increment = target / (duration / 16);
-
-            const counter = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    el.textContent = "+" + target;
-                    clearInterval(counter);
-                } else {
-                    el.textContent = "+" + Math.floor(start);
-                }
-            }, 16);
-        }
-
-        const counters = document.querySelectorAll('[id^="counter"]');
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = parseInt(el.getAttribute('data-target'), 10);
-                    animateCounter(el, target, 1000); // 1 saniyede saysın
-                    observer.unobserve(el); // bir kere çalışsın
-                }
-            });
-        }, { threshold: 0.5 });
-
-        counters.forEach(counter => {
-            observer.observe(counter);
-        });
-    </script>
-
-
     <script>
         const menuBtn = document.getElementById("menuBtn");
         const closeMenu = document.getElementById("closeMenu");
@@ -473,11 +405,10 @@
         window.addEventListener('DOMContentLoaded', () => {
             const popup = document.getElementById('popup');
             const popupContent = document.getElementById('popupContent');
-            const hasSeenPopup = localStorage.getItem('popupShown'); // localStorage kullanıldı
+            const hasSeenPopup = localStorage.getItem('popupShown');
 
-            if (!hasSeenPopup) { // Artık localStorage kontrolü yapılıyor
+            if (!hasSeenPopup) {
                 setTimeout(() => {
-                    // 1. Başlangıç hali
                     popup.classList.remove('hidden');
                     popup.classList.add('flex');
                     popup.classList.add('opacity-0');
@@ -485,7 +416,6 @@
 
                     document.body.classList.add('overflow-hidden');
 
-                    // 2. DOM işlemesi sonrası animasyon başlat
                     requestAnimationFrame(() => {
                         setTimeout(() => {
                             popup.classList.remove('opacity-0');
@@ -495,11 +425,10 @@
                             popupContent.classList.add('opacity-100', 'scale-100');
                         }, 10);
                     });
-                }, 10000); // 10 saniye sonra göster
+                }, 10000);
             }
 
             document.getElementById('closeBtn').addEventListener('click', () => {
-                // Animasyonu geri sar
                 popup.classList.remove('opacity-100');
                 popup.classList.add('opacity-0');
 
@@ -510,7 +439,7 @@
                     popup.classList.add('hidden');
                     popup.classList.remove('flex');
                     document.body.classList.remove('overflow-hidden');
-                    localStorage.setItem('popupShown', 'true'); // Artık localStorage’a yazılıyor
+                    localStorage.setItem('popupShown', 'true');
                 }, 500);
             });
         });
@@ -524,10 +453,8 @@
         const footer = document.getElementById('footer');
 
         offerBtn.addEventListener('click', () => {
-            // Footer'a yumuşak geçiş yap
             footer.scrollIntoView({ behavior: 'smooth' });
 
-            // Pop-up'ı kapat
             popup.classList.remove('opacity-100');
             popup.classList.add('opacity-0');
 
@@ -539,10 +466,9 @@
                 popup.classList.remove('flex');
                 document.body.classList.remove('overflow-hidden');
                 sessionStorage.setItem('popupShown', 'true');
-            }, 500); // animasyon süresi
+            }, 500);
         });
 
-        // Kapama butonunu ayrı dinle
         closeBtn.addEventListener('click', () => {
             popup.classList.remove('opacity-100');
             popup.classList.add('opacity-0');
@@ -558,7 +484,6 @@
             }, 500);
         });
     </script>
-
 </body>
 
 </html>
